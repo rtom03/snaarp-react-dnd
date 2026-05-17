@@ -121,7 +121,6 @@ export default function DeviceManagement() {
         <SortableContext
           items={deviceManagementTopStats.map((c) => c.id)}
           strategy={rectSortingStrategy}
-          className="country-list"
         >
           <div className="dm-top-grid">
             {deviceManagementTopStats.map((s) => (

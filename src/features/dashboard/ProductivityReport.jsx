@@ -202,7 +202,6 @@ export default function ProductivityReport() {
         <SortableContext
           items={deviceStats.map((c) => c.id)}
           strategy={rectSortingStrategy}
-          className="country-list"
         >
           <div className="dm-top-grid mb-4">
             {deviceStats.map((s) => (
