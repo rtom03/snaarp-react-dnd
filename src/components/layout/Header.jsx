@@ -7,7 +7,7 @@ export default function Header() {
       </div>
       <div className="header-right">
         <span className="agent-badge">
-          Agent Code: <strong>03f65o2j37742y3b38</strong>
+          Agent Code: <strong>...</strong>
         </span>
         <button aria-label="Notifications">
           <i className="ti ti-bell" />
