@@ -3,7 +3,6 @@ import {
   SortableContext,
   useSortable,
 } from "@dnd-kit/sortable";
-import { useActiveUserStore } from "../../src/store/activeUserStore";
 import { CSS } from "@dnd-kit/utilities";
 import {
   closestCenter,
@@ -12,6 +11,8 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
+import useDashboardStore from "../../store/dashboardStore";
+import useDragAndDrop from "../../hooks/useDragAndDrop";
 
 function MapPlaceholder() {
   return (
@@ -136,21 +137,9 @@ function CountryList({ id, index, name, flag, pct, color }) {
 }
 
 export default function ActiveUsers() {
-  const items = useActiveUserStore((state) => state.items);
-  const reorderCountries = useActiveUserStore(
-    (state) => state.reorderCountries,
-  );
+  const countries = useDashboardStore((s) => s.countries);
+  const { sensors, handleDragEnd } = useDragAndDrop("countries");
 
-  const sensors = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: { distance: 5 },
-    }),
-  );
-
-  function handleDragEnd({ active, over }) {
-    if (!over || active.id === over.id) return;
-    reorderCountries(active.id, over.id);
-  }
   return (
     <div className="panel">
       <div className="panel-header">
@@ -172,12 +161,12 @@ export default function ActiveUsers() {
         onDragEnd={handleDragEnd}
       >
         <SortableContext
-          items={items.map((c) => c.id)}
+          items={countries.map((c) => c.id)}
           strategy={rectSortingStrategy}
           className="country-list"
         >
           <div>
-            {items.map((c, idx) => (
+            {countries.map((c, idx) => (
               <CountryList
                 key={c.id}
                 id={c.id}

@@ -251,3 +251,132 @@
 .country-fill {
   @apply h-full rounded-full;
 }
+
+/* Device Management */
+.dm-header {
+  @apply flex items-center justify-between mb-4;
+}
+.dm-header-actions {
+  @apply flex items-center gap-3;
+}
+.dm-top-grid {
+  @apply grid grid-cols-4 gap-3 mb-4;
+}
+.dm-bottom-row {
+  @apply flex gap-3;
+}
+.dm-pairs-col {
+  @apply flex-1 flex flex-col gap-3;
+}
+.dm-pairs-grid {
+  @apply grid grid-cols-3 gap-3;
+}
+.dm-pair-item {
+  @apply bg-gray-50 rounded-lg p-3 border border-gray-100;
+}
+.dm-pair-header {
+  @apply flex items-center gap-1.5 text-xs text-gray-400 mb-1;
+}
+.dm-pair-header i {
+  @apply text-sm;
+}
+.dm-pair-value {
+  @apply text-lg font-semibold text-gray-800;
+}
+.dm-tags-row {
+  @apply flex gap-4 pt-2 border-t border-gray-100;
+}
+.dm-tag-group {
+  @apply flex gap-3;
+}
+.dm-tag {
+  @apply flex flex-col;
+}
+.dm-tag-label {
+  @apply text-[10px] text-gray-400;
+}
+.dm-tag-value {
+  @apply text-[11px] font-medium text-gray-600;
+}
+.dm-downloads-card {
+  @apply w-52 flex-shrink-0 bg-gray-50 rounded-lg p-4 border border-gray-100;
+}
+
+/* Productivity Report */
+.pr-charts-row {
+  @apply grid grid-cols-3 gap-4;
+}
+.pr-donut-card {
+  @apply col-span-1 bg-gray-50 rounded-lg p-4 border border-gray-100 flex flex-col items-center;
+}
+.pr-donut-body {
+  @apply flex items-center gap-4 mb-3 w-full;
+}
+.pr-donut-legend {
+  @apply flex flex-col gap-2;
+}
+.pr-total-label {
+  @apply text-[10px] text-gray-400 tracking-wider mt-1;
+}
+.pr-total-value {
+  @apply text-lg font-semibold text-gray-700;
+}
+.pr-line-card {
+  @apply col-span-2 bg-gray-50 rounded-lg p-4 border border-gray-100;
+}
+
+/* Online Users */
+.ou-subtitle {
+  @apply text-xs text-gray-400 ml-5;
+}
+.ou-table-wrapper {
+  @apply overflow-x-auto;
+}
+.ou-table {
+  @apply w-full text-left border-collapse;
+}
+.ou-table thead tr {
+  @apply border-b border-gray-100;
+}
+.ou-table th {
+  @apply text-[11px] font-medium text-gray-400 pb-2 pr-4 whitespace-nowrap;
+}
+.ou-th {
+  @apply flex items-center gap-1;
+}
+.ou-th i {
+  @apply text-xs text-gray-300;
+}
+.ou-row {
+  @apply border-b border-gray-50 hover:bg-gray-50 transition-colors;
+}
+.ou-row td {
+  @apply py-2.5 pr-4;
+}
+.ou-name-cell {
+  @apply flex items-center gap-2;
+}
+.ou-status-dot {
+  @apply w-2 h-2 rounded-full flex-shrink-0;
+}
+.ou-status-dot.online {
+  @apply bg-green-400;
+}
+.ou-status-dot.offline {
+  @apply bg-gray-300;
+}
+.ou-avatar {
+  @apply w-7 h-7 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-medium flex items-center justify-center flex-shrink-0;
+}
+.ou-name {
+  @apply text-xs font-medium text-gray-700 whitespace-nowrap;
+}
+.ou-cell {
+  @apply text-xs text-gray-500 whitespace-nowrap;
+}
+.ou-icon {
+  @apply text-base text-gray-500;
+}
+.ou-activity-cell {
+  @apply flex items-center gap-1.5;
+}

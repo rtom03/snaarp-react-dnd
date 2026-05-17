@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import Dashboard from "../features/dashboard/Dashboard";
+import Dashboard from "./features/dashboard/Dashboard";
 
 function Placeholder({ title }) {
   return (

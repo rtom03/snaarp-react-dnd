@@ -7,25 +7,15 @@ import {
 } from "@dnd-kit/core";
 import { SortableContext, rectSortingStrategy } from "@dnd-kit/sortable";
 import StorageCard from "./StorageCard";
-import useDashboardStore from "../../src/store/dashboardStore";
-import StatCard from "../../src/components/ui/StatsCard";
+import useDashboardStore from "../../store/dashboardStore";
 import FileSharing from "./FileSharing";
 import ActiveUsers from "./ActiveUsers";
+import StatCard from "../../components/ui/StatsCard";
+import useDragAndDrop from "../../hooks/useDragAndDrop";
 
 export default function CloudNetwork() {
   const cards = useDashboardStore((s) => s.cards);
-  const reorderCards = useDashboardStore((s) => s.reorderCards);
-
-  const sensors = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: { distance: 5 },
-    }),
-  );
-
-  function handleDragEnd({ active, over }) {
-    if (!over || active.id === over.id) return;
-    reorderCards(active.id, over.id);
-  }
+  const { sensors, handleDragEnd } = useDragAndDrop("cards");
 
   return (
     <section className="cloud-network">
