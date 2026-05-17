@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+@layer components {
+  .sidebar {
+    @apply w-52 flex-shrink-0 bg-white border-r border-gray-200 flex flex-col h-screen sticky top-0;
+  }
+  .sidebar-logo {
+    @apply px-4 py-4 text-lg font-semibold text-gray-900 border-b border-gray-200;
+  }
+  .sidebar-nav {
+    @apply flex-1 overflow-y-auto py-2;
+  }
+  .section-label {
+    @apply text-[11px] uppercase tracking-wider text-gray-400 px-4 pt-4 pb-1;
+  }
+  .nav-item {
+    @apply flex items-center gap-2.5 px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-800 transition-colors;
+  }
+  .nav-item.active {
+    @apply bg-indigo-50 text-indigo-700 font-medium border-r-2 border-indigo-600;
+  }
+  .nav-item i {
+    @apply text-base;
+  }
+  .sidebar-footer {
+    @apply border-t border-gray-200 p-4 flex items-center gap-2.5;
+  }
+  .avatar {
+    @apply w-8 h-8 rounded-full bg-indigo-50 text-indigo-700 text-xs font-medium flex items-center justify-center flex-shrink-0;
+  }
+  .avatar-name {
+    @apply text-xs font-medium text-gray-800 truncate;
+  }
+  .avatar-email {
+    @apply text-[11px] text-gray-400 truncate;
+  }
+  .header {
+    @apply h-14 bg-white border-b border-gray-200 flex items-center gap-3 px-5 sticky top-0 z-10 flex-shrink-0;
+  }
+  .search-bar {
+    @apply flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 h-8 flex-1 max-w-xs;
+  }
+  .search-bar i {
+    @apply text-gray-400 text-sm;
+  }
+  .search-bar input {
+    @apply bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-full;
+  }
+  .header-right {
+    @apply ml-auto flex items-center gap-2;
+  }
+  .agent-badge {
+    @apply text-[11px] text-gray-400 bg-gray-50 border border-gray-200 rounded-md px-2 py-1;
+  }
+  .agent-badge strong {
+    @apply text-indigo-600 font-medium;
+  }
+  .header-right button {
+    @apply w-8 h-8 flex items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 transition-colors border-none bg-transparent cursor-pointer;
+  }
+  .header-right button i {
+    @apply text-lg;
+  }
+}
+
+/* Cloud Network */
+.cloud-network {
+  @apply bg-white rounded-xl border border-gray-200 p-5 mb-4;
+}
+.section-header {
+  @apply flex items-center gap-2 mb-4 text-sm font-medium text-gray-600;
+}
+.section-header i {
+  @apply text-base;
+}
+.section-header h2 {
+  @apply text-sm font-medium text-gray-700;
+}
+.cloud-network-grid {
+  @apply grid gap-4;
+  grid-template-columns: 1fr 320px;
+}
+.stat-cards-grid {
+  @apply grid grid-cols-2 gap-3;
+}
+
+/* Stat Card */
+.stat-card {
+  @apply bg-gray-50 rounded-lg p-4 border border-gray-100;
+}
+.stat-card-header {
+  @apply flex items-center gap-1.5 mb-3;
+}
+.stat-card-icon {
+  @apply text-gray-400 text-sm;
+}
+.stat-card-title {
+  @apply text-xs text-gray-500;
+}
+.stat-card-body {
+  @apply flex items-end justify-between;
+}
+.stat-card-value {
+  @apply text-2xl font-semibold text-gray-800 mb-1;
+}
+.stat-card-change {
+  @apply flex flex-col gap-0.5;
+}
+.change-up {
+  @apply flex items-center gap-0.5 text-xs font-medium text-green-600;
+}
+.change-down {
+  @apply flex items-center gap-0.5 text-xs font-medium text-red-500;
+}
+.change-up i,
+.change-down i {
+  @apply text-[11px];
+}
+.change-label {
+  @apply text-[11px] text-gray-400;
+}
+
+/* Storage Card */
+.storage-card {
+  @apply bg-gray-50 rounded-lg p-4 border border-gray-100 flex flex-col gap-4;
+}
+.storage-note {
+  @apply flex gap-2 bg-yellow-50 border border-yellow-200 rounded-lg p-3;
+}
+.storage-note i {
+  @apply text-yellow-500 text-base flex-shrink-0 mt-0.5;
+}
+.note-title {
+  @apply text-xs font-medium text-yellow-700 mb-0.5;
+}
+.note-text {
+  @apply text-[11px] text-yellow-600 leading-relaxed;
+}
+.storage-body {
+  @apply flex items-center gap-4;
+}
+.storage-legend {
+  @apply grid grid-cols-2 gap-x-4 gap-y-1.5 flex-1;
+}
+.legend-item {
+  @apply flex items-center gap-1.5 text-xs text-gray-500;
+}
+.legend-dot {
+  @apply w-2 h-2 rounded-full flex-shrink-0;
+}
+.upgrade-btn {
+  @apply flex items-center justify-center gap-1.5 w-full py-2 rounded-lg border border-indigo-200 text-indigo-600 text-xs font-medium hover:bg-indigo-50 transition-colors bg-white;
+}
+
+/* Two col row */
+.two-col-row {
+  @apply grid grid-cols-2 gap-4 mb-4;
+}
+
+/* Shared panel */
+.panel {
+  @apply bg-white rounded-xl border border-gray-200 p-5;
+}
+.panel-header {
+  @apply flex items-start justify-between mb-4;
+}
+.panel-title {
+  @apply flex items-center gap-2 text-gray-600;
+}
+.panel-title i {
+  @apply text-base;
+}
+.panel-heading {
+  @apply text-sm font-medium text-gray-700;
+}
+.panel-sub {
+  @apply text-xs text-gray-400 mt-0.5;
+}
+.panel-actions {
+  @apply flex items-center gap-2 text-gray-400;
+}
+.panel-actions i {
+  @apply text-base cursor-pointer hover:text-gray-600;
+}
+.panel-select {
+  @apply text-xs text-gray-500 border border-gray-200 rounded-md px-2 py-1 outline-none;
+}
+
+/* Bar chart */
+.bar-chart {
+  @apply flex gap-2 h-40 mb-4;
+}
+.bar-y-axis {
+  @apply flex flex-col justify-between text-[10px] text-gray-400 text-right pr-1;
+}
+.bar-columns {
+  @apply flex items-end gap-1.5 flex-1;
+}
+.bar-col {
+  @apply flex flex-col items-center gap-1 flex-1;
+}
+.bar-track {
+  @apply w-full flex-1 flex items-end;
+}
+.bar-fill {
+  @apply w-full bg-indigo-600 rounded-t-sm transition-all;
+}
+.bar-label {
+  @apply text-[9px] text-gray-400;
+}
+.bar-legend {
+  @apply flex items-center gap-4 mt-2;
+}
+.legend-row {
+  @apply flex items-center gap-1.5 text-[11px] text-gray-500;
+}
+.legend-sq {
+  @apply w-2.5 h-2 rounded-sm flex-shrink-0;
+}
+
+/* Map */
+.map-placeholder {
+  @apply w-full h-36 rounded-lg overflow-hidden mb-4;
+}
+
+/* Country list */
+.country-list {
+  @apply flex flex-col gap-2.5;
+}
+.country-row {
+  @apply flex items-center gap-2.5;
+}
+.country-flag {
+  @apply text-base flex-shrink-0;
+}
+.country-info {
+  @apply flex-1 min-w-0;
+}
+.country-bar-row {
+  @apply flex justify-between text-xs mb-1;
+}
+.country-name {
+  @apply text-gray-600 truncate;
+}
+.country-pct {
+  @apply text-gray-500 font-medium;
+}
+.country-track {
+  @apply h-1.5 bg-gray-100 rounded-full overflow-hidden;
+}
+.country-fill {
+  @apply h-full rounded-full;
+}
