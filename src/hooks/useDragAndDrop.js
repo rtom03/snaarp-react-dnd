@@ -1,4 +1,10 @@
-import { useSensor, useSensors, PointerSensor } from "@dnd-kit/core";
+import {
+  useSensor,
+  useSensors,
+  PointerSensor,
+  KeyboardSensor,        // ← add
+} from "@dnd-kit/core";
+import { sortableKeyboardCoordinates } from "@dnd-kit/sortable"; // ← add
 import useDashboardStore from "../store/dashboardStore";
 
 export default function useDragAndDrop(key) {
@@ -8,6 +14,9 @@ export default function useDragAndDrop(key) {
     useSensor(PointerSensor, {
       activationConstraint: { distance: 5 },
     }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates, // ← tells keyboard sensor how to calculate next position
+    })
   );
 
   function handleDragEnd({ active, over }) {
